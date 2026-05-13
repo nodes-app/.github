@@ -1,4 +1,4 @@
-# nodes.app
+# Nodes Team
 
 **Your ideas, connected.**
 
