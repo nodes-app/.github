@@ -11,9 +11,9 @@ quietly useful tricks like local LLM tag suggestions.
 
 ### [swift-markdown-engine](https://github.com/nodes-app/swift-markdown-engine)
 
-![Stars](https://img.shields.io/github/stars/nodes-app/swift-markdown-engine?label=stars&color=black)
-![Swift](https://img.shields.io/github/languages/top/nodes-app/swift-markdown-engine?color=black)
-![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=black)
+![Stars](https://img.shields.io/github/stars/nodes-app/swift-markdown-engine?label=stars&color=000000)
+![Swift](https://img.shields.io/github/languages/top/nodes-app/swift-markdown-engine?color=000000)
+![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=000000)
 
 A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to
 SwiftUI. The same editor that powers Nodes.
