@@ -1,53 +1,92 @@
-# Nodes Team
+<div align="center">
 
-**Your ideas, connected.**
+<a href="https://nodes-web.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/nodes-wordmark-dark.svg" />
+    <img src="assets/nodes-wordmark.svg" alt="Nodes" width="168" />
+  </picture>
+</a>
 
-We make [**Nodes**](https://nodes-web.com) — a macOS app for writing, linking,
-and exploring your notes. Markdown and PDFs live as plain files on your disk,
-woven together by wiki-style links, a force-directed graph view, and a few
-quietly useful tricks like local LLM tag suggestions.
+**your ideas, connected.**
 
-## What we've open-sourced
+</div>
+
+---
+
+## what we make
+
+**Nodes** is a macOS app for writing, linking, and exploring your notes.
+
+Your markdown and PDF files stay as plain files on your disk — you own your data, nothing locked in. Wiki-style `[[links]]` weave notes together, and a force-directed graph view lets you explore the connections between them.
+
+It's fully on-device and private: local LLM tag suggestions, contextual search that understands meaning rather than just keywords, and no cloud dependency or data harvesting. Powerful markdown import/export means you can always take your files and leave.
+
+Minimal, beautiful, fast. Every design decision is intentional. Every element earns its place.
+
+→ **[nodes-web.com](https://nodes-web.com)**
+
+---
+
+## open source
 
 ### [swift-markdown-engine](https://github.com/nodes-app/swift-markdown-engine)
+
+A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to SwiftUI. The same editor that powers Nodes.
 
 ![Stars](https://img.shields.io/github/stars/nodes-app/swift-markdown-engine?label=stars&color=000000)
 ![Swift](https://img.shields.io/github/languages/top/nodes-app/swift-markdown-engine?color=000000)
 ![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=000000)
-
-A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to
-SwiftUI. The same editor that powers Nodes.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=nodes-app/swift-markdown-engine&type=Date&theme=dark">
   <img alt="Star history for swift-markdown-engine" src="https://api.star-history.com/svg?repos=nodes-app/swift-markdown-engine&type=Date" width="600">
 </picture>
 
-## Team
+---
+
+## the team
+
+<div align="center">
 
 <table>
   <tr>
-    <td align="center" width="140">
+    <td align="center" width="180">
       <a href="https://github.com/Nicolas-Py">
-        <img src="https://avatars.githubusercontent.com/u/80885367?s=120&v=4" width="96" alt="Nicolas-Py" />
-        <br /><sub><b>Nicolas-Py</b></sub>
-      </a>
+        <img src="assets/avatar-nico.png" width="80" alt="Nico"><br>
+        <sub><b>Nico</b></sub>
+      </a><br>
+      <sub>@Nicolas-Py</sub><br>
+      <sub>Munich · TUM</sub>
     </td>
-    <td align="center" width="140">
+    <td align="center" width="180">
       <a href="https://github.com/luca-chen198">
-        <img src="https://avatars.githubusercontent.com/u/120277108?s=120&v=4" width="96" alt="luca-chen198" />
-        <br /><sub><b>luca-chen198</b></sub>
-      </a>
+        <img src="assets/avatar-luca.png" width="80" alt="Luca"><br>
+        <sub><b>Luca</b></sub>
+      </a><br>
+      <sub>@luca-chen198</sub><br>
+      <sub>Munich · LMU</sub>
     </td>
-    <td align="center" width="140">
+    <td align="center" width="180">
       <a href="https://github.com/xandaaaa">
-        <img src="https://avatars.githubusercontent.com/u/183604883?s=120&v=4" width="96" alt="xandaaaa" />
-        <br /><sub><b>xandaaaa</b></sub>
-      </a>
+        <img src="assets/avatar-xander.png" width="80" alt="Xander"><br>
+        <sub><b>Xander</b></sub>
+      </a><br>
+      <sub>@xandaaaa</sub><br>
+      <sub>Zurich · ETH</sub>
     </td>
   </tr>
 </table>
 
+</div>
+
 ---
 
-[nodes-web.com](https://nodes-web.com)
+<div align="center">
+
+<a href="https://nodes-web.com">
+  <img src="assets/nodes-dots-master.svg" height="100" alt="Nodes — your ideas, connected" />
+</a>
+
+<sub>**[nodes-web.com](https://nodes-web.com)**</sub>
+
+</div>
