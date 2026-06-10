@@ -6,12 +6,9 @@
     <img src="assets/nodes-wordmark.svg" alt="Nodes" width="168" />
   </picture>
 </a>
-
-**your ideas, connected.**
-
 </div>
 
----
+
 
 ## what we make
 
