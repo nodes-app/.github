@@ -35,8 +35,8 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
 ![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=000000)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=nodes-app/swift-markdown-engine&type=Date&theme=dark">
-  <img alt="Star history for swift-markdown-engine" src="https://api.star-history.com/svg?repos=nodes-app/swift-markdown-engine&type=Date" width="600">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/star-history-dark.svg">
+  <img alt="Star history for swift-markdown-engine" src="assets/star-history.svg" width="600">
 </picture>
 
 ---
