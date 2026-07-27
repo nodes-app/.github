@@ -14,19 +14,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No token: the script reads the public star count, and a token scoped to
+      # this repo cannot read the engine repo's stargazers anyway.
       - name: Generate chart
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/generate-star-chart.mjs
 
       - name: Commit if changed
         run: |
-          if git diff --quiet profile/assets; then
+          if git diff --quiet profile/assets profile/data; then
             echo "chart unchanged"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/assets/star-history.svg profile/assets/star-history-dark.svg
+          git add profile/assets/star-history.svg profile/assets/star-history-dark.svg profile/data/star-history.json
           git commit -m "Update star chart"
           git push
