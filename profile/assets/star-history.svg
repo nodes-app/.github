@@ -1,18 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340" role="img" aria-label="Star history for nodes-app/swift-markdown-engine: 873 stars">
-  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
-    <text x="52" y="20" fill="#57606a" font-size="12">nodes-app/swift-markdown-engine</text>
-    <text x="580" y="20" text-anchor="end" fill="#000000" font-size="12" font-weight="600">873 stars</text>
-    <line x1="52" y1="300" x2="580" y2="300" stroke="#d0d7de" stroke-width="1"/><text x="44" y="304" text-anchor="end" fill="#57606a" font-size="11">0</text>
-    <line x1="52" y1="234" x2="580" y2="234" stroke="#d0d7de" stroke-width="1"/><text x="44" y="238" text-anchor="end" fill="#57606a" font-size="11">250</text>
-    <line x1="52" y1="168" x2="580" y2="168" stroke="#d0d7de" stroke-width="1"/><text x="44" y="172" text-anchor="end" fill="#57606a" font-size="11">500</text>
-    <line x1="52" y1="102" x2="580" y2="102" stroke="#d0d7de" stroke-width="1"/><text x="44" y="106" text-anchor="end" fill="#57606a" font-size="11">750</text>
-    <line x1="52" y1="36" x2="580" y2="36" stroke="#d0d7de" stroke-width="1"/><text x="44" y="40" text-anchor="end" fill="#57606a" font-size="11">1000</text>
-    <text x="52" y="320" text-anchor="start" fill="#57606a" font-size="11">Apr 28, 2026</text>
-    <text x="184" y="320" text-anchor="middle" fill="#57606a" font-size="11">May 20, 2026</text>
-    <text x="316" y="320" text-anchor="middle" fill="#57606a" font-size="11">Jun 12, 2026</text>
-    <text x="448" y="320" text-anchor="middle" fill="#57606a" font-size="11">Jul 4, 2026</text>
-    <text x="580" y="320" text-anchor="end" fill="#57606a" font-size="11">Jul 27, 2026</text>
-    <path d="M52.0,299.5 L98.9,299.2 L140.0,278.6 L145.9,262.2 L151.7,230.6 L157.6,196.0 L163.5,189.4 L169.3,180.7 L175.2,172.8 L181.1,169.8 L186.9,167.7 L192.8,165.6 L198.7,160.6 L204.5,157.7 L210.4,154.3 L216.3,151.4 L222.1,149.8 L228.0,148.7 L233.9,147.7 L239.7,147.4 L245.6,147.1 L251.5,146.4 L257.3,144.8 L263.2,144.5 L269.1,138.7 L274.9,132.9 L280.8,130.2 L286.7,129.2 L292.5,128.1 L298.4,126.3 L304.3,125.8 L310.1,124.2 L316.0,123.9 L327.7,123.4 L333.6,123.1 L339.5,122.6 L345.3,121.5 L351.2,121.0 L357.1,120.5 L362.9,119.7 L374.7,118.9 L380.5,118.1 L386.4,117.3 L392.3,116.5 L398.1,115.5 L404.0,115.2 L415.7,114.4 L421.6,113.9 L427.5,113.6 L433.3,113.1 L439.2,112.3 L456.8,111.5 L462.7,111.0 L468.5,109.9 L474.4,109.1 L480.3,108.9 L492.0,108.6 L497.9,108.3 L509.6,107.8 L515.5,95.1 L521.3,89.9 L527.2,85.9 L533.1,83.0 L538.9,81.7 L544.8,80.1 L550.7,77.4 L556.5,73.2 L562.4,72.2 L568.3,71.1 L574.1,70.1 L580.0,69.5" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-    <circle cx="580.0" cy="69.5" r="3.5" fill="#000000"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340" role="img" aria-label="nodes-app/swift-markdown-engine star history: 873 stars">
+  <g font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12">
+    <rect x="0" y="0" width="600" height="340" fill="#edeae1"/>
+    <rect x="6.5" y="6.5" width="587" height="327" fill="none" stroke="#2b2828" stroke-width="1"/>
+
+    <text x="26" y="44" fill="#2b2828">[[swift-markdown-engine]]</text>
+    <text x="574" y="44" text-anchor="end" fill="#6b6663">github stars</text>
+    <line x1="26" y1="56" x2="574" y2="56" stroke="#c2beb4" stroke-width="1"/>
+
+    <line x1="26" y1="229.26" x2="574" y2="229.26" stroke="#d6d3cb" stroke-width="1"/>
+    <text x="28" y="223.26" fill="#6b6663" font-size="10">250</text>
+    <line x1="26" y1="174.53" x2="574" y2="174.53" stroke="#d6d3cb" stroke-width="1"/>
+    <text x="28" y="168.53" fill="#6b6663" font-size="10">500</text>
+    <line x1="26" y1="119.79" x2="574" y2="119.79" stroke="#d6d3cb" stroke-width="1"/>
+    <text x="28" y="113.79" fill="#6b6663" font-size="10">750</text>
+    <line x1="26" y1="284" x2="574" y2="284" stroke="#2b2828" stroke-width="1"/>
+
+    <rect x="168" y="204" width="94.8" height="74" fill="#edeae1"/>
+    <text x="174" y="250" fill="#2b2828" font-size="46" letter-spacing="-1">873</text>
+    <text x="176" y="272" fill="#6b6663" font-size="11">stars</text>
+
+    <path d="M26,283.56 L74.71,283.34 L117.33,266.27 L123.42,252.69 L129.51,226.42 L135.6,197.73 L141.69,192.26 L147.78,185.04 L153.87,178.47 L159.96,176.06 L166.04,174.31 L172.13,172.56 L178.22,168.4 L184.31,165.99 L190.4,163.14 L196.49,160.73 L202.58,159.42 L208.67,158.54 L214.76,157.67 L220.84,157.45 L226.93,157.23 L233.02,156.57 L239.11,155.26 L245.2,155.04 L251.29,150.22 L257.38,145.41 L263.47,143.22 L269.56,142.34 L275.64,141.47 L281.73,139.93 L287.82,139.49 L293.91,138.18 L300,137.96 L312.18,137.52 L318.27,137.31 L324.36,136.87 L330.44,135.99 L336.53,135.55 L342.62,135.12 L348.71,134.46 L360.89,133.8 L366.98,133.15 L373.07,132.49 L379.16,131.83 L385.24,130.96 L391.33,130.74 L403.51,130.08 L409.6,129.64 L415.69,129.42 L421.78,128.99 L427.87,128.33 L446.13,127.67 L452.22,127.23 L458.31,126.36 L464.4,125.7 L470.49,125.48 L482.67,125.26 L488.76,125.04 L500.93,124.61 L507.02,114.1 L513.11,109.72 L519.2,106.43 L525.29,104.03 L531.38,102.93 L537.47,101.62 L543.56,99.43 L549.64,95.92 L555.73,95.05 L561.82,94.17 L567.91,93.3 L574,92.86" fill="none" stroke="#2b2828" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="574" cy="92.86" r="6" fill="#edeae1"/>
+    <circle cx="574" cy="92.86" r="3.5" fill="#d1403f"/>
+
+    <text x="26" y="310" fill="#6b6663" font-size="11">apr 28</text>
+    <text x="300" y="310" text-anchor="middle" fill="#6b6663" font-size="11">2026</text>
+    <text x="574" y="310" text-anchor="end" fill="#6b6663" font-size="11">jul 27</text>
   </g>
 </svg>

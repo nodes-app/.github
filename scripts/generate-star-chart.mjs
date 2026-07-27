@@ -8,14 +8,54 @@
 // scoped to this repo, so that fetch answered 403 every week. The plain repo
 // endpoint used here is public and needs no credentials at all.
 //
+// The chart is drawn as a printed card: it paints Nodes paper and rules its own
+// border, so it looks the same whatever colour the page behind it is. GitHub
+// loads it as an <img>, which means no script, no external CSS and no web
+// fonts - Roboto Mono will not load, so everything is set in the system mono
+// stack. There is deliberately no animation either: a draw-on line has no safe
+// first frame, and any renderer that rasterises frame zero instead of playing
+// the timeline would capture an empty plot.
+//
 // Usage: node scripts/generate-star-chart.mjs
 
 import { readFileSync, writeFileSync } from "node:fs";
 
-const REPO = "nodes-app/swift-markdown-engine";
+const REPO_OWNER = "nodes-app";
+const REPO_NAME = "swift-markdown-engine";
+const REPO = `${REPO_OWNER}/${REPO_NAME}`;
 const OUT_DIR = new URL("../profile/assets/", import.meta.url).pathname;
 const DATA_FILE = new URL("../profile/data/star-history.json", import.meta.url)
   .pathname;
+
+const MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace";
+
+// Light is the Nodes site palette verbatim (--ink / --paper / --red from
+// src/style.css). Dark is a chosen counterpart, not an automatic inversion: a
+// warm near-black stands in for paper, and the border is softened because
+// full-strength ink rings the card in near-white and glares.
+const LIGHT = {
+  suffix: "",
+  paper: "#edeae1",
+  ink: "#2b2828",
+  muted: "#6b6663",
+  hair: "#d6d3cb",
+  hairStrong: "#c2beb4",
+  border: "#2b2828",
+  red: "#d1403f",
+};
+
+const DARK = {
+  suffix: "-dark",
+  paper: "#1b1917",
+  ink: "#e9e5dc",
+  muted: "#948e87",
+  hair: "#3a3633",
+  hairStrong: "#4b4642",
+  border: "#6d655e",
+  red: "#e2605e",
+};
+
+/* ------------------------------------------------------------------ series */
 
 /** Today as YYYY-MM-DD, UTC, matching the seeded sample dates. */
 function today() {
@@ -67,75 +107,90 @@ ${rows}
 `;
 }
 
-function niceCeil(n) {
-  const pow = 10 ** Math.floor(Math.log10(Math.max(n, 1)));
-  for (const m of [1, 2, 2.5, 5, 10]) {
-    if (m * pow >= n) return m * pow;
-  }
-  return 10 * pow;
-}
+/* ------------------------------------------------------------------ drawing */
 
-function renderSvg(samples, { line, text, grid }) {
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const at = (day) => Date.parse(`${day}T00:00:00Z`);
+const dayOf = (day) => new Date(at(day));
+const shortDate = (day) => {
+  const d = dayOf(day);
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
+};
+const year = (day) => dayOf(day).getUTCFullYear();
+const n = (v) => Number(v.toFixed(2));
+
+/** Advance width of a monospace run. Every face in the stack is 0.6em/char. */
+const tw = (s, size) => s.length * size * 0.6;
+
+const toPath = (pts) =>
+  pts.map(([x, y], i) => `${i ? "L" : "M"}${n(x)},${n(y)}`).join(" ");
+
+function render(samples, c) {
   const W = 600;
   const H = 340;
-  const M = { top: 36, right: 20, bottom: 40, left: 52 };
-  const iw = W - M.left - M.right;
-  const ih = H - M.top - M.bottom;
-
-  const at = (s) => Date.parse(`${s[0]}T00:00:00Z`);
-  const t0 = at(samples[0]);
-  const t1 = at(samples[samples.length - 1]);
+  const pad = 26;
   const total = samples[samples.length - 1][1];
-  const yMax = niceCeil(total * 1.05);
+  // Leave the top 8% clear so the curve never touches the header rule.
+  const yMax = Math.ceil(total / 0.92 / 50) * 50;
 
-  // A single sample would make the x scale divide by zero; fall back to a flat
-  // line across the plot rather than emitting NaN coordinates.
+  const box = { x: pad, y: 76, w: W - pad * 2, h: H - 76 - 56 };
+  const t0 = at(samples[0][0]);
+  const t1 = at(samples[samples.length - 1][0]);
   const span = t1 - t0 || 1;
-  const x = (t) => M.left + ((t - t0) / span) * iw;
-  const y = (c) => M.top + ih - (c / yMax) * ih;
-
-  const pts = samples.map((s) => [x(at(s)), y(s[1])]);
-  const path = pts
-    .map(
-      ([px, py], i) => `${i === 0 ? "M" : "L"}${px.toFixed(1)},${py.toFixed(1)}`,
-    )
-    .join(" ");
-
-  const yTicks = [];
-  const yStep = yMax / 4;
-  for (let v = 0; v <= yMax; v += yStep) {
-    yTicks.push(
-      `<line x1="${M.left}" y1="${y(v)}" x2="${W - M.right}" y2="${y(v)}" stroke="${grid}" stroke-width="1"/>` +
-        `<text x="${M.left - 8}" y="${y(v) + 4}" text-anchor="end" fill="${text}" font-size="11">${v}</text>`,
-    );
-  }
-
-  const xTicks = [];
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  for (let i = 0; i <= 4; i++) {
-    const t = t0 + (span * i) / 4;
-    const d = new Date(t);
-    const label = `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
-    const anchor = i === 0 ? "start" : i === 4 ? "end" : "middle";
-    xTicks.push(
-      `<text x="${x(t)}" y="${H - M.bottom + 20}" text-anchor="${anchor}" fill="${text}" font-size="11">${label}</text>`,
-    );
-  }
-
+  const x = (day) => box.x + ((at(day) - t0) / span) * box.w;
+  const y = (v) => box.y + box.h - (v / yMax) * box.h;
+  const pts = samples.map((s) => [x(s[0]), y(s[1])]);
   const [ex, ey] = pts[pts.length - 1];
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Star history for ${REPO}: ${total} stars">
-  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
-    <text x="${M.left}" y="20" fill="${text}" font-size="12">${REPO}</text>
-    <text x="${W - M.right}" y="20" text-anchor="end" fill="${line}" font-size="12" font-weight="600">${total} stars</text>
-    ${yTicks.join("\n    ")}
-    ${xTicks.join("\n    ")}
-    <path d="${path}" fill="none" stroke="${line}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-    <circle cx="${ex.toFixed(1)}" cy="${ey.toFixed(1)}" r="3.5" fill="${line}"/>
+  // Gridlines every 250, labelled just above the rule at the far left where
+  // the series is still flat on the floor.
+  const grid = [];
+  for (let v = 250; v < yMax; v += 250) {
+    grid.push(
+      `<line x1="${box.x}" y1="${n(y(v))}" x2="${box.x + box.w}" y2="${n(y(v))}" stroke="${c.hair}" stroke-width="1"/>`,
+      `<text x="${box.x + 2}" y="${n(y(v) - 6)}" fill="${c.muted}" font-size="10">${v}</text>`,
+    );
+  }
+
+  // The hero number sits in the dead space under the long taper and knocks the
+  // gridlines out behind itself.
+  const heroX = box.x + 148;
+  const heroBaseline = box.y + box.h - 34;
+  const heroSize = 46;
+  const capBaseline = box.y + box.h - 12;
+
+  const first = samples[0][0];
+  const last = samples[samples.length - 1][0];
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${REPO} star history: ${total} stars">
+  <g font-family="${MONO}" font-size="12">
+    <rect x="0" y="0" width="${W}" height="${H}" fill="${c.paper}"/>
+    <rect x="6.5" y="6.5" width="${W - 13}" height="${H - 13}" fill="none" stroke="${c.border}" stroke-width="1"/>
+
+    <text x="${pad}" y="${pad + 18}" fill="${c.ink}">[[${REPO_NAME}]]</text>
+    <text x="${W - pad}" y="${pad + 18}" text-anchor="end" fill="${c.muted}">github stars</text>
+    <line x1="${pad}" y1="${pad + 30}" x2="${W - pad}" y2="${pad + 30}" stroke="${c.hairStrong}" stroke-width="1"/>
+
+    ${grid.join("\n    ")}
+    <line x1="${box.x}" y1="${box.y + box.h}" x2="${box.x + box.w}" y2="${box.y + box.h}" stroke="${c.ink}" stroke-width="1"/>
+
+    <rect x="${heroX - 6}" y="${heroBaseline - heroSize}" width="${tw("000", heroSize) + 12}" height="${capBaseline - heroBaseline + heroSize + 6}" fill="${c.paper}"/>
+    <text x="${heroX}" y="${heroBaseline}" fill="${c.ink}" font-size="${heroSize}" letter-spacing="-1">${total}</text>
+    <text x="${heroX + 2}" y="${capBaseline}" fill="${c.muted}" font-size="11">stars</text>
+
+    <path d="${toPath(pts)}" fill="none" stroke="${c.ink}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${n(ex)}" cy="${n(ey)}" r="6" fill="${c.paper}"/>
+    <circle cx="${n(ex)}" cy="${n(ey)}" r="3.5" fill="${c.red}"/>
+
+    <text x="${pad}" y="${H - pad - 4}" fill="${c.muted}" font-size="11">${shortDate(first)}</text>
+    <text x="${W / 2}" y="${H - pad - 4}" text-anchor="middle" fill="${c.muted}" font-size="11">${year(last)}</text>
+    <text x="${W - pad}" y="${H - pad - 4}" text-anchor="end" fill="${c.muted}" font-size="11">${shortDate(last)}</text>
   </g>
 </svg>
 `;
 }
+
+/* --------------------------------------------------------------------- main */
 
 const data = JSON.parse(readFileSync(DATA_FILE, "utf8"));
 if (!Array.isArray(data.samples) || data.samples.length === 0) {
@@ -153,12 +208,10 @@ if (last[0] === day) {
 }
 
 writeFileSync(DATA_FILE, serialize(data));
-writeFileSync(
-  `${OUT_DIR}star-history.svg`,
-  renderSvg(data.samples, { line: "#000000", text: "#57606a", grid: "#d0d7de" }),
-);
-writeFileSync(
-  `${OUT_DIR}star-history-dark.svg`,
-  renderSvg(data.samples, { line: "#ffffff", text: "#8b949e", grid: "#30363d" }),
-);
+for (const palette of [LIGHT, DARK]) {
+  writeFileSync(
+    `${OUT_DIR}star-history${palette.suffix}.svg`,
+    render(data.samples, palette),
+  );
+}
 console.log(`wrote star-history SVGs (${count} stars, ${data.samples.length} samples)`);
