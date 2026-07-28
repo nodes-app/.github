@@ -20,9 +20,9 @@ It's fully on-device and private: local LLM tag suggestions, contextual search t
 
 Minimal, beautiful, fast. Every design decision is intentional. Every element earns its place.
 
-→ **[Free on the Mac App Store](https://apps.apple.com/app/apple-store/id6745401961?pt=127809373&ct=github&mt=8)**
+→ [Mac App Store](https://apps.apple.com/app/apple-store/id6745401961?pt=127809373&ct=github&mt=8)
 
-→ **[nodes-web.com](https://nodes-web.com)**
+→ [nodes-web.com](https://nodes-web.com)
 
 ---
 
