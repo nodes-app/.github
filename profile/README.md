@@ -1,10 +1,7 @@
 <div align="center">
 
 <a href="https://nodes-web.com">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/nodes-wordmark-dark.svg" />
-    <img src="assets/nodes-wordmark.svg" alt="Nodes" width="168" />
-  </picture>
+  <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/nodes-wordmark.png" alt="Nodes" width="202" />
 </a>
 </div>
 
@@ -37,8 +34,8 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
 ![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=000000)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/star-history-dark.svg">
-  <img alt="Star history for swift-markdown-engine" src="assets/star-history.svg" width="600">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/star-history-dark.svg">
+  <img alt="Star history for swift-markdown-engine" src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/star-history.svg" width="600">
 </picture>
 
 ---
@@ -51,7 +48,7 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
   <tr>
     <td align="center" width="180">
       <a href="https://github.com/Nicolas-Py">
-        <img src="assets/avatar-nico.png" width="80" alt="Nico"><br>
+        <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/avatar-nico.png" width="80" alt="Nico"><br>
         <sub><b>Nico</b></sub>
       </a><br>
       <sub>@Nicolas-Py</sub><br>
@@ -59,7 +56,7 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
     </td>
     <td align="center" width="180">
       <a href="https://github.com/luca-chen198">
-        <img src="assets/avatar-luca.png" width="80" alt="Luca"><br>
+        <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/avatar-luca.png" width="80" alt="Luca"><br>
         <sub><b>Luca</b></sub>
       </a><br>
       <sub>@luca-chen198</sub><br>
@@ -67,7 +64,7 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
     </td>
     <td align="center" width="180">
       <a href="https://github.com/xandaaaa">
-        <img src="assets/avatar-xander.png" width="80" alt="Xander"><br>
+        <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/avatar-xander.png" width="80" alt="Xander"><br>
         <sub><b>Xander</b></sub>
       </a><br>
       <sub>@xandaaaa</sub><br>
@@ -83,7 +80,7 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
 <div align="center">
 
 <a href="https://nodes-web.com">
-  <img src="assets/nodes-dots-master.svg" height="100" alt="Nodes — your ideas, connected" />
+  <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/nodes-dots-master.png" height="100" alt="Nodes — your ideas, connected" />
 </a>
 
 <sub>**[nodes-web.com](https://nodes-web.com)**</sub>
