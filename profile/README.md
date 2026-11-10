@@ -40,6 +40,12 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
 
 ---
 
+## internal
+
+→ [nodes-outreach](https://github.com/nodes-app/nodes-outreach) · private, team members only
+
+---
+
 ## the team
 
 <div align="center">
