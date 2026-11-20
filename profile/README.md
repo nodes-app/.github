@@ -1,46 +1,44 @@
 <div align="center">
 
-<a href="https://nodes-web.com">
-  <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/nodes-wordmark.png" alt="Nodes" width="202" />
+<a href="https://www.werk-42.eu">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/werk42/werk42-stacked-dark.png">
+    <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/werk42/werk42-stacked-light.png" alt="Werk 42" width="160" />
+  </picture>
 </a>
+
+Werk 42 is the studio behind Nodes.<br>
+<a href="https://www.werk-42.eu">www.werk-42.eu</a>
+
 </div>
 
+## Projects
 
+<a href="https://www.werk-42.eu/projects/nodes/"><img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/werk42/line-23.png" alt="Line 23 of the Werk 42 picture" width="840" /></a>
 
-## what we make
+### Nodes
 
-**Nodes** is a macOS app for writing, linking, and exploring your notes.
+A Mac app for writing and linking notes.
 
-Your markdown and PDF files stay as plain files on your disk — you own your data, nothing locked in. Wiki-style `[[links]]` weave notes together, and a force-directed graph view lets you explore the connections between them.
+- Notes are Markdown and PDF files on your own disk, imported and exported as plain Markdown.
+- `[[links]]` between notes, and a graph that lays them out.
+- Tag suggestions and search by meaning run on the Mac, not on a server.
 
-It's fully on-device and private: local LLM tag suggestions, contextual search that understands meaning rather than just keywords, and no cloud dependency or data harvesting. Powerful markdown import/export means you can always take your files and leave.
+[Mac App Store](https://apps.apple.com/app/apple-store/id6745401961?pt=127809373&ct=github&mt=8) · [nodes-web.com](https://nodes-web.com) · [werk-42.eu/projects/nodes](https://www.werk-42.eu/projects/nodes/)
 
-Minimal, beautiful, fast. Every design decision is intentional. Every element earns its place.
+<br>
 
-→ [Mac App Store](https://apps.apple.com/app/apple-store/id6745401961?pt=127809373&ct=github&mt=8)
+<a href="https://www.werk-42.eu/projects/swift-markdown-engine/"><img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/werk42/line-39.png" alt="Line 39 of the Werk 42 picture" width="840" /></a>
 
-→ [nodes-web.com](https://nodes-web.com)
+### swift-markdown-engine
 
----
+The editor you type into in Nodes, as a Swift package for any Mac app: native AppKit on TextKit 2, bridged to SwiftUI. Open source under Apache 2.0.
 
-## open source
+<a href="https://github.com/nodes-app/swift-markdown-engine"><img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/star-history.svg" alt="Stars on GitHub for swift-markdown-engine" width="840" /></a>
 
-### [swift-markdown-engine](https://github.com/nodes-app/swift-markdown-engine)
+[github.com/nodes-app/swift-markdown-engine](https://github.com/nodes-app/swift-markdown-engine) · [werk-42.eu/projects/swift-markdown-engine](https://www.werk-42.eu/projects/swift-markdown-engine/)
 
-A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to SwiftUI. The same editor that powers Nodes.
-
-![Stars](https://img.shields.io/github/stars/nodes-app/swift-markdown-engine?label=stars&color=000000)
-![Swift](https://img.shields.io/github/languages/top/nodes-app/swift-markdown-engine?color=000000)
-![License](https://img.shields.io/github/license/nodes-app/swift-markdown-engine?color=000000)
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/star-history-dark.svg">
-  <img alt="Star history for swift-markdown-engine" src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/star-history.svg" width="600">
-</picture>
-
----
-
-## the team
+## Team
 
 <div align="center">
 
@@ -72,17 +70,5 @@ A native AppKit Markdown editor for macOS, built on TextKit 2 and bridged to Swi
     </td>
   </tr>
 </table>
-
-</div>
-
----
-
-<div align="center">
-
-<a href="https://nodes-web.com">
-  <img src="https://raw.githubusercontent.com/nodes-app/.github/main/profile/assets/nodes-dots-master.png" height="100" alt="Nodes — your ideas, connected" />
-</a>
-
-<sub>**[nodes-web.com](https://nodes-web.com)**</sub>
 
 </div>
